@@ -1,9 +1,9 @@
 # Pokemon-Showdown-Bot
 Format: Gen 9 Random Battle
 
-6 random Pokemon with random moves
-No choice of lead
-No preview of opponent's team
+- 6 random Pokemon with random moves
+- No choice of lead
+- No preview of opponent's team
 
 Assume all user's and opponent's Pokemon have optimum IVs and EVs are spread evenly (85 EVs) for all stats with neutral natures 
 
