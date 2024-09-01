@@ -16,7 +16,7 @@ players = [sh_player, eo_player, nsd_player]
 
 
 async def cross_evaluation_function():
-    return await cross_evaluate(players, n_challenges=2)
+    return await cross_evaluate(players, n_challenges=400)
 
 
 cross_evaluation = asyncio.run(cross_evaluation_function())
@@ -47,4 +47,6 @@ SimpleHeuristics 1                      0.3875              0.655
 EvaluateOrderPla 1  0.6125                                  0.7225
 NoSwitchDamagePl 1  0.345               0.2775
 ------------------  ------------------  ------------------  ------------------
+
+Table above was printed after each pair of bots played 400 battles
 """
