@@ -9,21 +9,15 @@ Assume all user's and opponent's Pokemon have optimum IVs and EVs are spread eve
 
 Bot1 NoSwitchDamagePlayer :
 - Assigns values to damaging moves only, based on hard-coded rules, choose one with highest score
-- Takes into account multipliers (attack/special-attack, STAB, weather, type effectiveness, burn, multiple hits + accuracy)
   
 Bot2 EvaluateOrderPlayer :
-- Assigns values to all moves based on hard-coded rules, choose one with highest score
-- Takes into account multipliers (attack/special-attack, STAB, weather, type effectiveness, burn, multiple hits + accuracy)
-- Evaluates all possible switches, attacks and status moves (including boost and status-causing moves)
-- Takes into account user's and target's boosts and statuses (+ correctly works with ability Guts)
-- Uses pre-existing file of target's possible moves to better predict if we need to switch
-- Takes into account which boosts are more beneficial (if move causes boosts or has a chance to)
-- Takes into account moves' properties (expected hits, secondary effects, if breaks protect, crit ratio, if has fixed damage (like seismic toss), switch moves (like u-turn, volt switch), priority, recoil)
+- Evaluates all possible switches, attacks and status moves
+- Takes into account moves' properties (expected hits, secondary effects, if breaks protect, crit ratio, if has fixed damage (like seismic toss), switch moves (like u-turn, volt switch), priority, recoil, drain)
 - Takes into account user's hp, defenses and speed
-- Takes into account if user outspeeds and can KO target
-- Takes into account move Sleep Talk (if target is asleep)
-- Takes into account healing and draining moves
-
+- Uses pre-existing file of target's possible moves to better predict if we need to switch
+- Takes into account user's and target's boosts and statuses (+ correctly works with ability Guts)
+- Other minor heuristics
+   
 EvaluateOrderPlayer wins SimpleHeuristicsPlayer(built-in bot) 60% of the times 
 
 Possible improvements :
