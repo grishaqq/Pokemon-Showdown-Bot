@@ -15,61 +15,15 @@ from typing import Union
 
 
 """
------------UNUSED-----------
+-----------UNUSED-/-TO-DO-------------
 def evaluate_battle_score(battle: Battle, user: Pokemon, target: Pokemon) -> float:
     score = 0.0
 
     # Weather Evaluation
-    weather = battle.weather
-    if weather:
-        if user.has_ability("chlorophyll") and weather == "sunnyday":
-            score += 0.2  # Chlorophyll user benefits from sun
-        elif user.has_ability("swiftswim") and weather == "raindance":
-            score += 0.2  # Swift Swim user benefits from rain
-        elif target.has_ability("chlorophyll") and weather == "sunnyday":
-            score -= 0.2  # Opponent benefits from sun
-        elif target.has_ability("swiftswim") and weather == "raindance":
-            score -= 0.2  # Opponent benefits from rain
-        elif weather in ["sandstorm", "hail"]:
-            if user.types and "rock" in user.types or "steel" in user.types or "ice" in user.types:
-                score += 0.1  # Beneficial if the user resists or is immune
-            else:
-                score -= 0.1  # Harmful weather for user
-
     # Terrain (Fields) Evaluation
-    terrain = battle.field
-    if terrain:
-        if terrain == "electricterrain" and user.has_ability("surge_surfer"):
-            score += 0.2  # User benefits from Electric Terrain with Surge Surfer
-        if terrain == "grassyterrain":
-            if "grass" in user.types:
-                score += 0.1  # Beneficial for Grass-types
-            if "grass" in target.types:
-                score -= 0.1  # Beneficial for opponent if they're Grass-type
-
     # Side Conditions
-    if battle.side_conditions:
-        if battle.side_conditions.get("reflect"):
-            if is_physical_attacker(target) > 0.5:
-                score += 0.2  # Reflect helps against physical attackers
-            else:
-                score -= 0.1  # Reflect less useful against special attackers
-        if battle.side_conditions.get("light_screen"):
-            if is_special_attacker(target) > 0.5:
-                score += 0.2  # Light Screen helps against special attackers
-            else:
-                score -= 0.1  # Light Screen less useful against physical attackers
-        if battle.side_conditions.get("stealth_rock"):
-            if "flying" in user.types or "fire" in user.types:
-                score -= 0.2  # Stealth Rock is harmful for Flying/Fire types
-            else:
-                score -= 0.1  # General penalty for Stealth Rock
-
-    # Normalize the score to ensure it stays within the range of -1 to 1
-    score = max(-1.0, min(1.0, score))
-
+    
     return score
-
 
 """
 
