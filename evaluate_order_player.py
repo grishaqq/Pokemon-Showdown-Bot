@@ -9,8 +9,6 @@ class EvaluateOrderPlayer(Player):
         target = battle.all_active_pokemons[1]
         available_orders = battle.available_moves + battle.available_switches
         if available_orders:
-            # for order in available_orders:
-            #    print(evaluate_order(battle, user, target, order), order)
             best_move = max(
                 available_orders,
                 key=lambda order: evaluate_order(battle, user, target, order),
