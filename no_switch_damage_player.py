@@ -17,16 +17,3 @@ class NoSwitchDamagePlayer(Player):
                 return self.create_order(best_move, terastallize=True)
             return self.create_order(best_move)
         return self.choose_random_move(battle)
-
-
-"""
-
-if battle.can_tera:
-            available_orders.extend(
-                [
-                    BattleOrder(move, terastallize=True)
-                    for move in battle.available_moves
-                ]
-            )
-
-"""
